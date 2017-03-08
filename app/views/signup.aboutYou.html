@@ -1,33 +1,35 @@
 <div class="ui attached segment">
-<form class="ui form">
-  <h4 class="ui dividing header">Shipping Information</h4>
+<form class="ui form" name="aboutYouForm" novalidate ng-submit="aboutYouForm.$valid && moveToNextStep('signup.company', aboutYouForm)">
+  <h4 class="ui dividing header">Information about you</h4>
   <div class="field">
-    <label>Name</label>
+    <label>Forename</label>
     <div class="two fields">
-      <div class="field">
-        <input type="text" name="shipping[first-name]" placeholder="First Name">
+      <div class="field" ng-class="{'error': signupForm.forename.$invalid && signupForm.forename.$dirty}">
+        <input type="text" required ng-model="company.admins[0].forename" name="forname" placeholder="Forename...">
       </div>
-      <div class="field">
-        <input type="text" name="shipping[last-name]" placeholder="Last Name">
-      </div>
-    </div>
-  </div>
-  <div class="field">
-    <label>Billing Address</label>
-    <div class="fields">
-      <div class="twelve wide field">
-        <input type="text" name="shipping[address]" placeholder="Street Address">
-      </div>
-      <div class="four wide field">
-        <input type="text" name="shipping[address-2]" placeholder="Apt #">
+      <div class="field" ng-class="{'error': signupForm.surname.$invalid && signupForm.surname.$dirty}">
+        <input type="text" required ng-model="company.admins[0].surname" name="surname" placeholder="Surname...">
       </div>
     </div>
-  </div>
+  </div>  
+    <div class="field">
+    <label>Password</label>
+    <div class="two fields">
+      <div class="field" ng-class="{'error': signupForm.password.$invalid && signupForm.password.$dirty}">
+        <input type="password" required ng-model="company.admins[0].password" name="password" placeholder="Password...">
+      </div>
+      <div class="field" ng-class="{'error': signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty || company.admins[0].confirmPassword!=company.admins[0].password}">
+        <input type="password" required ng-model="company.admins[0].confirmPassword" name="confirmPassword" placeholder="Confirm password...">
+      </div>
+    </div>
+  </div> 
+
+  
   
 
   
 
-  <div class="ui button" tabindex="0">Submit Order</div>
+  <input type="submit" value="Next" class="ui button">
 </form>
 </div>
 

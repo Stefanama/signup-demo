@@ -13,22 +13,15 @@
       <div class="description">Tell us more about yourself</div>
     </div>
   </div>
-  <div class="disabled step">
-    <i class="info icon"></i>
+  <div class="step link" ui-sref="signup.company" ui-sref-active="active">
+    <i class="home icon"></i>
     <div class="content">
       <div class="title">Company</div>
       <div class="description">Fill in informations about the company</div>
     </div>
   </div>
-    <div class="disabled step">
-    <i class="info icon"></i>
-    <div class="content">
-      <div class="title">Staging Date</div>
-      <div class="description">Tell us about the staging date</div>
-    </div>
-  </div>
-    <div class="disabled step">
-    <i class="info icon"></i>
+    <div class="step link"  ui-sref="signup.summary" ui-sref-active="active">
+    <i class="checkmark box icon"></i>
     <div class="content">
       <div class="title">Summary</div>
       <div class="description">Recheck your informations here before submitting</div>
@@ -36,5 +29,3 @@
   </div>
 </div>
     <ui-view></ui-view>
-<button ui-sref="signup.getStarted" class="ui blue button">Next</button>
-<button ng-click="send()" class="ui blue button">Next</button>

@@ -6,20 +6,15 @@
     <div class="sub header">Set up a workplace pension for your employees in 4 easy steps. Our service is free to use and if you don't like it you can cancel anytime at zero cost.</div>
   </div>
 </h2>
-<form class="ui form" method="POST" action="/" name="testForm" ng-submit="send()">
+<form class="ui form" novalidate name="signupForm" ng-submit="signupForm.$valid && moveToNextStep('signup.aboutYou', signupForm)">
   <div class="ui divider"></div>
   <div class="field">
     <label>Email</label>
-      <div class="field">
-        <input type="text" name="shipping[last-name]" placeholder="Last Name">
+      <div class="field" ng-class="{'error': signupForm.email.$invalid && signupForm.email.$dirty}">
+        <input type="text" ng-model="company.admins[0].email" required name="email" placeholder="Email...">
       </div>
-  </div>
-
-  
-
-  
-
-  <input type="submit" class="ui button" tabindex="0">
+  </div>  
+  <input type="submit" class="ui button" value="Next">
 </form>
 </div>
 

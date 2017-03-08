@@ -40,4 +40,24 @@ angular.module('signupApp', [
         name: 'signup.aboutYou'
         , templateUrl: 'views/signup.aboutYou.html'
     })
+    $stateProvider.state({
+        name: 'signup.company'
+        , templateUrl: 'views/signup.company.html'
+    })
+    $stateProvider.state({
+        name: 'signup.summary'
+        , templateUrl: 'views/signup.summary.html'
+    })
+})
+.directive('dropdownMenu', function ($timeout) {
+    return {
+        restrict: "A"
+        , link: function (scope, elm, attr) {
+            $timeout(function () {
+                $(elm).dropdown().dropdown('setting', {
+                    action: attr.action || 'nothing'
+                });
+            }, 0);
+        }
+    };
 });
