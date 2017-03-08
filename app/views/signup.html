@@ -1,0 +1,40 @@
+<div class="ui five top attached steps">
+  <div class="step link" ui-sref="signup.getStarted" ui-sref-active="active">
+    <i class="truck icon"></i>
+    <div class="content">
+      <div class="title">Get Started</div>
+      <div class="description">Start your signup process here</div>
+    </div>
+  </div>
+  <div class="step link" ui-sref="signup.aboutYou" ui-sref-active="active">
+    <i class="payment icon"></i>
+    <div class="content">
+      <div class="title">About you</div>
+      <div class="description">Tell us more about yourself</div>
+    </div>
+  </div>
+  <div class="disabled step">
+    <i class="info icon"></i>
+    <div class="content">
+      <div class="title">Company</div>
+      <div class="description">Fill in informations about the company</div>
+    </div>
+  </div>
+    <div class="disabled step">
+    <i class="info icon"></i>
+    <div class="content">
+      <div class="title">Staging Date</div>
+      <div class="description">Tell us about the staging date</div>
+    </div>
+  </div>
+    <div class="disabled step">
+    <i class="info icon"></i>
+    <div class="content">
+      <div class="title">Summary</div>
+      <div class="description">Recheck your informations here before submitting</div>
+    </div>
+  </div>
+</div>
+    <ui-view></ui-view>
+<button ui-sref="signup.getStarted" class="ui blue button">Next</button>
+<button ng-click="send()" class="ui blue button">Next</button>
